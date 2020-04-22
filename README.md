@@ -64,4 +64,8 @@ Class.getResource 使用注意点，他和 ClassLoader.getResource 的区别
     loader 在找 resource 的时候会先调用父 loader 去寻找，早不到再调用自己，和 class 的双亲委派一个样。
     如果在 ClassLoader.getResource 时路径前加了 `\` 那么你基本方法调用会失败。
 
+## Q4 SAX 包解析 xml 被容生成 bean
 
+解析过程中，最重要的步骤是更具自己的需求，自定义一个 class 继承 DefaultHandler，在里面更具需求添加解析逻辑。本来还想看一看这个 lib 的源码的，不过貌似和我一开始与其的出入很大，暂时不看了。。。
+
+定义完 handler 之后通过工厂模式拿到一个 sax 的 parser 实例，传入目标文件的内容和 handler 完成解析。

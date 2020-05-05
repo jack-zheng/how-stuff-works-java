@@ -69,3 +69,7 @@ Class.getResource 使用注意点，他和 ClassLoader.getResource 的区别
 解析过程中，最重要的步骤是更具自己的需求，自定义一个 class 继承 DefaultHandler，在里面更具需求添加解析逻辑。本来还想看一看这个 lib 的源码的，不过貌似和我一开始与其的出入很大，暂时不看了。。。
 
 定义完 handler 之后通过工厂模式拿到一个 sax 的 parser 实例，传入目标文件的内容和 handler 完成解析。
+
+## Q5 Java protected 关键字的访问权限
+
+定义中被 protected 修饰的成员对本包及其子类可见。对没有没有重写过的 clone() 方法，他是从 Object 继承过来的，只在 lang 包和子类中可见。
